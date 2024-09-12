@@ -16,6 +16,27 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+
+--- configuring rust lsp settings
+lspconfig.rust_analyzer.setup({
+  settings = {
+    ["rust-analyzer"] = {
+      hover = {
+        enable = true,
+      },
+      inlayHints = {
+        enable = true,
+      },
+      diagnostics = {
+        enable = true,
+      },
+    },
+  },
+})
+
+-- Space-h => Bring details of the symbole
+vim.api.nvim_set_keymap('n', '<Leader>h', '<Cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,

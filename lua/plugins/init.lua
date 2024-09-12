@@ -13,10 +13,15 @@ return {
     end,
   },
 
+  -- Mason & Mason helpers
   {
     "williamboman/mason.nvim"
   },
+  {
+    "williamboman/mason-lspconfig.nvim"
+  },
 
+  -- Rust tolling
   {
     "mrcjkb/rustaceanvim",
     version = "^4",
@@ -24,17 +29,18 @@ return {
     ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,
-      }
+      },
     },
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  -- Tree-sitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+   		ensure_installed = {
+ 			"vim", "lua", "vimdoc",
+       "html", "css", "rust",
+   		},
+   	},
+   },
 }
