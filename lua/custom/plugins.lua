@@ -6,6 +6,12 @@ local plugins = {
         "rust-analyzer",
       },
     },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function ()
+      require "custom.configs.lspconfig"
+    end
   }
 }
 return plugins

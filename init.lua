@@ -22,7 +22,7 @@ require("lazy").setup({
     import = "nvchad.plugins",
   },
 
-  { import = "plugins" },
+  { import = "plugins" }
 }, lazy_config)
 
 -- load theme
@@ -31,6 +31,7 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "nvchad.autocmds"
+require "chadrc"
 
 vim.schedule(function()
   require "mappings"
