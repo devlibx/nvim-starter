@@ -1,9 +1,44 @@
-**This repo is supposed to used as config by NvChad users!**
+**Custom Fork for Harish**
+1. Install NVim
+```
+# OSX
+brew install nvim
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+# Ubuntu
+sudo snap install nvim --classic
+```
+2. Install NvChad setup
+```
+mkdir .config;
+cd .config;
+git clone https://github.com/devlibx/nvim-starter.git nvim
+```
 
-# Credits
+3. Install required tools
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+```
+:MesonInstall lua-language-server
+:MesonInstall rust-analyzer
+
+# OSX
+sh osx_setup.sh
+
+# Ubuntu
+sh linux_setup.sh
+```
+
+
+----
+# Commands
+```
+# Open left side project tree
+Ctrl + n
+   'a' -> to add a new file on the tree
+
+
+```
+
+
+
+
+
