@@ -14,7 +14,7 @@ return {
   },
 
   {
-    "welliamboman/mason.nvim"
+    "williamboman/mason.nvim"
   },
 
   {
