@@ -19,7 +19,7 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    version = "^y",
+    version = "^4",
     lazy = false,
     ["rust-analyzer"] = {
       cargo = {
