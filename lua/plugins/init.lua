@@ -13,6 +13,21 @@ return {
     end,
   },
 
+  {
+    "welliamboman/mason.nvim"
+  },
+
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^y",
+    lazy = false,
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      }
+    },
+  },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
