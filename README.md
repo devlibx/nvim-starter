@@ -19,6 +19,7 @@ git clone https://github.com/devlibx/nvim-starter.git nvim
 ```
 :MesonInstall lua-language-server
 :MesonInstall rust-analyzer
+:MesonInstall codelldb
 
 # OSX
 sh osx_setup.sh
