@@ -23,4 +23,33 @@ end
 --   capabilities = nvlsp.capabilities,
 -- }
 
+require('lspconfig').lua_ls.setup({
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT', -- or 'Lua 5.1', 'Lua 5.2', etc.
+      },
+      diagnostics = {
+        globals = {'vim'}, -- add any global variables you use
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true), -- includes runtime files
+      },
+      completion = {
+        callSnippet = "Replace", -- or "Insert" if preferred
+      },
+    },
+  },
+})
+
+local cmp = require('cmp')
+
+cmp.setup({
+  sources = {
+    { name = 'nvim_lsp' },  -- For LSP completions
+    { name = 'path' },      -- For file path completions
+    -- Add other sources as needed
+  },
+  -- Add your completion settings here
+})
 

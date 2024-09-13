@@ -34,6 +34,11 @@ return {
   },
 
   {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+  },
+
+  {
     'mfussenegger/nvim-dap',
     config = function()
       local dap, dapui = require("dap"), require("dapui")
@@ -50,7 +55,6 @@ return {
         dapui.close()
       end
 
-
       dap.configurations.rust = {
         {
           name = "Launch Debug",
@@ -66,7 +70,6 @@ return {
       local dap_config = require('configs.dap')
       dap_config.setup_breakpoint_highlights()
       dap_config.customize_dap_ui()
-    
     end,
   },
 
