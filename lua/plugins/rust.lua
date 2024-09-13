@@ -62,16 +62,11 @@ return {
       }
 
 
-      local dap_config = require('configs.dap-config')
-
-
-      vim.fn.sign_define('DapBreakpoint', {
-        text = '●', -- Replace this with an appropriate icon or symbol
-        texthl = 'DapBreakpoint',
-        linehl = '',
-        numhl = ''
-      })
-      vim.cmd [[highlight DapBreakpoint guifg=#FF0000 gui=bold]]
+      -- Customize DAP UI
+      local dap_config = require('configs.dap')
+      dap_config.setup_breakpoint_highlights()
+      dap_config.customize_dap_ui()
+    
     end,
   },
 
