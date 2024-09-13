@@ -5,21 +5,27 @@ vim.api.nvim_create_user_command('Fmt', function()
   vim.lsp.buf.format()
 end, { desc = 'Format code using LSP' })
 
--- Define a command to add, commit, and push changes to Git
+-- Define a command to add, commit, and push changes to Git with user-provided commit message or default message
 vim.api.nvim_create_user_command('GitPush', function()
-  -- Add all changes
-  vim.fn.system('git add .')
+  -- Prompt user for commit message
+  vim.ui.input({ prompt = 'Enter commit message (leave empty for default): ' }, function(input)
+    -- Set default message if no input is provided
+    local commit_message = input and input ~= '' and input or "[*] intermediate code change"
 
-  -- Commit changes with a default message
-  local commit_message = "[*] intermediate code change"
-  vim.fn.system('git commit -m "' .. commit_message .. '"')
+    -- Add all changes
+    vim.fn.system('git add .')
 
-  -- Push changes
-  vim.fn.system('git push')
+    -- Commit changes with the provided or default message
+    vim.fn.system('git commit -m "' .. commit_message .. '"')
 
-  -- Notify user
-  print("Git operations completed: add, commit, push")
-end, { desc = 'Add, commit, and push changes to Git' })
+    -- Push changes
+    vim.fn.system('git push')
+
+    -- Notify user
+    print("Git operations completed: add, commit, push")
+  end)
+end, { desc = 'Add, commit, and push changes to Git with user-provided or default commit message' })
+
 
 -- No-op
 return {}
