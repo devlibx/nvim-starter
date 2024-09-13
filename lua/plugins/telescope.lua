@@ -7,6 +7,7 @@ require('telescope').setup({
       "%.cache/",
       "%.log",
       "%.tmp",
+      "lazy-lock.json",
       -- Add more patterns as needed
 
       -- Idea
