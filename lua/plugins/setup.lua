@@ -25,6 +25,7 @@ end, { desc = 'Add, commit, and push changes to Git with user-provided or defaul
 -- Define a function do to git checkout .
 vim.api.nvim_create_user_command("GitCo", function ()
   vim.fn.system("git checkout .")
+   vim.cmd("checktime")
 end, {desc = "Run git co . command"})
 
 -- No-op
