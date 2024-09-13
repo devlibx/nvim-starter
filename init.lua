@@ -36,6 +36,9 @@ vim.schedule(function()
   require "mappings"
 end)
 
+-- Disable SWP file
+vim.o.swapfile = false
+
 -- Always open VimTree when we start
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
