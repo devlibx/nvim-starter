@@ -1,9 +1,33 @@
-**This repo is supposed to used as config by NvChad users!**
+# My Custom Config
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+### Install following
+
+##### Common steps to be done on all platfrom e.g. OSX or Ubuntu
+```shell
+MasonInstall codelldb
+MasonInstall rust-analyzer
+```
+
+##### Needed on Ubuntu
+```shell
+sudo apt update 
+sudo apt install build-essential
+sudo apt install ripgrep
+```
+
+#####  Needed on Mac
+```shell
+brew install ripgrep
+```
+
+### Custom Help Command
+```shell
+# GitPush
+Execute > git add .; git commit -m <input message>; git push
+
+# Format file
+Fmt
+```
 
 # Credits
-
 1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
