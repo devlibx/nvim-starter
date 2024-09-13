@@ -3,4 +3,5 @@ return {
   require('plugins.lsp'),
   require('plugins.mason'),
   require('plugins.rust'),
+  require('plugins.tooling'),
 }
