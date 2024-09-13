@@ -27,6 +27,14 @@ Execute > git add .; git commit -m <input message>; git push
 
 # Format file
 Fmt
+
+# Display all keys
+:Telescope keymaps
+
+# Buffer
+Move to next files in buffer     => Tab
+Close buffer                     => <S>x
+
 ```
 
 # Credits
