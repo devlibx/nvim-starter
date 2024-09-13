@@ -7,6 +7,13 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+
+-- Formate file
+-- <leader> s + f
+vim.api.nvim_set_keymap('n', '<leader>sf', '<cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
+
+
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 -- -- Nvim DAP
 map("n", "<Leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { desc = "Debugger step into" })
