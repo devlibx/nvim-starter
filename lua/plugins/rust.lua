@@ -50,13 +50,20 @@ return {
         dapui.close()
       end
 
-      -- local dap_config = require('configs.dap-config')
 
-      -- Listener before an event occurs
-      --dap.listeners.before['event_initialized'] = function()
-      --  print("Debugger is initializing...")
-      -- dap_config.set_debug_keys()
-      --end
+      dap.configurations.rust = {
+        {
+          name = "Launch Debug",
+          type = "codelldb",
+          request = "launch",
+          program = "${workspaceFolder}/target/debug/${workspaceFolderBasename}",
+          cwd = "${workspaceFolder}",
+        }
+      }
+
+
+      local dap_config = require('configs.dap-config')
+
 
       vim.fn.sign_define('DapBreakpoint', {
         text = '●', -- Replace this with an appropriate icon or symbol
@@ -65,15 +72,6 @@ return {
         numhl = ''
       })
       vim.cmd [[highlight DapBreakpoint guifg=#FF0000 gui=bold]]
-
-      -- Define the current line marker with the red highlight
-      vim.fn.sign_define('DapCurrentLine', {
-        text = '→', -- Use the arrow symbol for the current line marker
-        texthl = 'DapCurrentLine', -- Use the custom highlight group
-        linehl = '',
-        numhl = ''
-      })
-      vim.cmd [[ highlight DapCurrentLine guifg=#FF0000 gui=bold]]
     end,
   },
 
