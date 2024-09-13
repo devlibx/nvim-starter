@@ -23,5 +23,44 @@ vim.api.nvim_create_user_command('GitPush', function()
 end, { desc = 'Add, commit, and push changes to Git with user-provided or default commit message' })
 
 
+local function list_keymaps()
+  local keymaps = vim.fn.execute("map")
+  local lines = vim.split(keymaps, "\n")
+  local mappings = {}
+  for _, line in ipairs(lines) do
+    if line ~= "" then
+      table.insert(mappings, line)
+    end
+  end
+  return mappings
+end
+
+local function search_keymaps()
+  require('telescope').extensions.fzf_writer.fuzzy_sort({
+    prompt_title = 'Search Key Mappings',
+    results_title = 'Key Mappings',
+    sorter = require('telescope.sorters').get_fuzzy_file(),
+    previewer = require('telescope.previewers').new_buffer_previewer({
+      define_preview = function(self, entry, status)
+        local lines = list_keymaps()
+        vim.api.nvim_buf_set_lines(self.state.bufnr, 0, -1, false, lines)
+      end
+    }),
+    finder = require('telescope.finders').new_table({
+      results = list_keymaps()
+    })
+  }):find()
+end
+
+-- Bind the function to a key
+vim.api.nvim_set_keymap('n', '<leader>km', ':lua search_keymaps()<CR>', { noremap = true, silent = true })
+
+
 -- No-op
-return {}
+return {
+
+  {
+    "mg979/vim-visual-multi",
+  }
+
+}
