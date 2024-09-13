@@ -22,6 +22,11 @@ vim.api.nvim_create_user_command('GitPush', function()
   end)
 end, { desc = 'Add, commit, and push changes to Git with user-provided or default commit message' })
 
+-- Define a function do to git checkout .
+vim.api.nvim_create_user_command("GitCo", function ()
+  vim.fn.system("git checkout .")
+end, {desc = "Run git co . command"})
+
 -- No-op
 return {
   {
