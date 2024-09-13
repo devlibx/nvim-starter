@@ -34,6 +34,7 @@ Fmt
 # Buffer
 Move to next files in buffer     => Tab
 Close buffer                     => <S>x
+Copy full buffer                 => !%f+
 
 ```
 
