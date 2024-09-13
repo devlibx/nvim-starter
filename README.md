@@ -36,6 +36,9 @@ Move to next files in buffer     => Tab
 Close buffer                     => <S>x
 Copy full buffer                 => !%f+
 
+# Noice
+When you run commands you may see error/warning (remove it ) => :NoiceDismiss 
+
 ```
 
 # Credits
