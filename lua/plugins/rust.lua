@@ -65,6 +65,9 @@ return {
         }
       }
 
+      require("dapui").setup({
+
+      })
 
       -- Customize DAP UI
       local dap_config = require('configs.dap')

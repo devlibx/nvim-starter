@@ -24,9 +24,7 @@ end, { desc = 'Add, commit, and push changes to Git with user-provided or defaul
 
 -- No-op
 return {
-
   {
     "mg979/vim-visual-multi",
-  }
-
+  },
 }
