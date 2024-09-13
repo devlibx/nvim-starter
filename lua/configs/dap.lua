@@ -22,6 +22,26 @@ function M.setup_breakpoint_highlights()
   })
 end
 
+function M.setup_init()
+  local dap, dapui = require("dap"), require("dapui")
+  dap.listeners.before.attach.dapui_config = function()
+    dapui.open()
+    require("nvim-tree.api").tree.close()
+  end
+  dap.listeners.before.launch.dapui_config = function()
+    dapui.open()
+    require("nvim-tree.api").tree.close()
+  end
+  dap.listeners.before.event_terminated.dapui_config = function()
+    dapui.close()
+    require("nvim-tree.api").tree.open()
+  end
+  dap.listeners.before.event_exited.dapui_config = function()
+    dapui.close()
+    require("nvim-tree.api").tree.open()
+  end
+end
+
 function M.customize_dap_ui()
   -- Customize the UI panel appearance
   vim.cmd [[
