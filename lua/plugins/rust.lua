@@ -41,11 +41,9 @@ return {
   {
     'mfussenegger/nvim-dap',
     config = function()
-      local dap, dapui = require("dap"), require("dapui")
       local dap_config = require('configs.dap')
-      dap_config.setup_init()
-      dap_config.setup_breakpoint_highlights()
-      dap_config.customize_dap_ui()
+      dap_config.setup_ui()
+      dap_config.setup_dap_listeners()
     end,
   },
 
