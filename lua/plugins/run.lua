@@ -31,4 +31,21 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
+
+-- Automatically check for file changes when switching buffers
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*',
+  callback = function()
+    vim.cmd('checktime')
+  end
+})
+
+-- Automatically check for file changes when Neovim is idle (optional)
+vim.api.nvim_create_autocmd('CursorHold', {
+  pattern = '*',
+  callback = function()
+    vim.cmd('checktime')
+  end
+})
+
 return {}
